@@ -1,0 +1,205 @@
+body{
+  background-color: #f0ebeba4;
+  display: flex;
+}
+.header{
+    background-color: rgb(255, 255, 255);
+    padding:5px;
+    display: flex;
+    background-color: #ffffff; 
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.employee{
+    color:#82A70C;
+}
+.payroll{
+    color:#42515F;
+}
+.h4{
+    margin: 10px;
+    padding-left: 90px;
+    padding-top: 20px;
+}
+.usericon{
+    padding-right: 3px;
+}
+.form-container{
+  margin-top: 10px;
+}
+.form{
+    border: 1px solid #ddd;
+    padding-right: 20px;
+    border-color: rgb(255, 255, 255);
+    margin-left: 400px;
+    margin-right: 250px;
+    margin-top: 40px;
+    margin-bottom:50px;
+    background-color: #ffffff;
+    flex-grow: 1;
+    box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.1);
+}
+.form h3{
+  margin-left: 140px;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.namelabel{
+    margin-left: 150px;
+}
+.nameinput{
+    padding-top: 10px;
+    padding-right: 170px;
+    padding-bottom: 10px;
+    margin-left: 150px;
+    margin-right: 80px;
+}
+.profilelabel {
+    margin-right: 10px;
+    display: inline-block;
+    margin-left: 150px;
+    margin-top: 40px;
+  }
+  
+.radiobuttons {
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-left: 90px;
+}
+  
+.profile-images {
+    display: flex;
+    align-items: center;
+}
+  
+.profile-image {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    overflow: hidden;
+  }
+  
+.profile-image img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+.genderlabel{
+    margin-left: 150px;
+}
+.genderradiobutton{
+    margin-bottom: 10px;
+    display: inline-block;
+    margin-left: 142px;
+}
+.departmentlabel {
+    margin-left: 150px; 
+}
+  
+.departmentcheckbox {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    display: inline-block;
+    margin-left: 111px;
+}
+  
+.departmentcheckbox input[type="checkbox"] {
+    margin-right: 10px; 
+}
+
+.salarylabel {
+    display: inline-block;
+    margin-top: 20px; 
+    margin-left: 150px;
+}
+  
+.salarydropdown {
+    display: inline-block;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    margin-left: 155px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 100px;
+    padding-left: 15px;
+}
+
+.startdatelabel {
+    display: inline-block; 
+    margin-top: 20px;
+    margin-left: 150px;
+  }
+  
+  .date-dropdowns {
+    display: inline-block; 
+    margin-left:110px;
+  }
+  
+  .daydropdown,
+  .monthdropdown,
+  .yeardropdown {
+    margin-left: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .daydropdown,
+  .monthdropdown,
+  .yeardropdown 
+  {
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 30px;
+  }
+
+  .noteslabel {
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 150px;
+  }
+  
+.notestextarea {
+    display: inline-block;
+    vertical-align: top; 
+    margin-top: 20px;
+    margin-left: 150px; 
+    margin-bottom: 20px;
+    width: 300px; 
+    height: 100px; 
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-left: 150px;
+    margin-bottom: 20px;
+  }
+  
+  .cancel-button {
+    background-color: #e74c3c; /* Red color for cancel button */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+.submit-reset-buttons {
+    display: flex;
+    margin-right: 60px;
+}
+  
+.submit-button,
+  .reset-button {
+    background-color: #3498db; /* Blue color for submit and reset buttons */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  
