@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import './Adduser.css';
-import img1 from './Asserts/1.jpeg';
-import img2 from './Asserts/2.jpeg';
-import img3 from './Asserts/3.jpeg';
-import img4 from './Asserts/4.png';
-import EmployeeService from './Service/EmployeeService';
+import img1 from '../Asserts/1.jpeg';
+import img2 from '../Asserts/2.jpeg';
+import img3 from '../Asserts/3.jpeg';
+import img4 from '../Asserts/4.png';
+import EmployeeService from '../Service/EmployeeService';
 
 export default function Adduser() {
   const [name, setName] = useState('');
@@ -69,6 +69,7 @@ export default function Adduser() {
     EmployeeService.addEmployee(employeeData)
       .then((response) => {
         console.log("Employee added successfully:", response.data);
+        alert("Data Added Successfully")
         handleReset();
       })
       .catch((error) => {

@@ -1,0 +1,67 @@
+body{
+    background-color: #f0ebeba4;
+    /* display: flex; */
+}
+.header{
+    background-color: rgb(255, 255, 255);
+    padding:5px;
+    display: flex;
+    background-color: #ffffff; 
+    align-items: center;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.employee{
+    color:#82A70C;
+}
+.payroll{
+    color:#42515F;
+}
+.h4{
+    margin: 10px;
+    padding-left: 150px;
+    padding-top: 20px;
+}
+.usericon{
+    padding-right: 3px;
+}
+.top{
+    display: flex;
+    margin-left: 200px;
+    margin-top: 50px;
+}
+.top h4{
+    display: inline-block;
+    color: #42515F;
+    font-size: larger;
+}
+.searchicon
+{
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    font-size: 20px;
+    border-radius: 19px;
+    border-color: rgb(183, 180, 180);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    margin-right: 20px;
+    margin-left: 650px;
+    margin-top: 25px;
+}
+.addicon{
+    padding-top: 3px;
+    padding-bottom: 7px;
+    padding-left: 20px;
+    padding-right: 27px;
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #82A70C;
+    color: #ffffff;
+    border-color: rgb(183, 180, 180);
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+.add{
+    font-size: 20px;
+}
