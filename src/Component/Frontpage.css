@@ -1,6 +1,6 @@
 .container{
-    width: 202vh;
-    height: 150vh;
+    width: 210vh;
+    height: auto;
 }
 body{
     background-color: #f0ebeba4;
@@ -41,7 +41,7 @@ body{
     margin-left: 60px;
     margin-top: 35px;
 }
-.searchicon
+/* .searchicon
 {
     padding-left: 12px;
     padding-right: 12px;
@@ -55,7 +55,7 @@ body{
     margin-right: 20px;
     margin-left: 700px;
     margin-top: 25px;
-}
+} */
 .addicon{
     padding-top: 5px;
     padding-bottom: 7px;
@@ -67,7 +67,7 @@ body{
     color: #ffffff;
     border-color: rgb(183, 180, 180);
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
-    margin-left: 750px;
+    margin-left: auto;
     margin-top: 40px;
     margin-bottom: 0px;
     text-align: left;
@@ -76,11 +76,10 @@ body{
 }
 .add{
     font-size: 20px;
-    text-decoration: none;
 }
 
 .table-main {
-    width: 96%;
+    width: 85%;
     overflow: auto;
     margin-left: 90px;
     margin-top: -10px;
@@ -96,7 +95,7 @@ body{
 td,
 th {
     text-align: center;
-    padding: 5px 8px;
+    padding: 6px 8px;
 }
 
 .tr {
@@ -158,13 +157,13 @@ td img {
     display: flex;
     align-items: center;
     margin-left: 600px;
-    margin-top: 30px;
+    margin-top: 28px;
     margin-bottom: -75px;
 }
 
 .input1 {
     width: 50px; 
-    padding: 5px 5px; 
+    padding: 6px 10px; 
     font-size: 16px; 
     border-radius: 15px; 
     border-color: rgb(183, 180, 180);
@@ -177,5 +176,13 @@ td img {
     width: 100px; 
 }
 .search-icon {
-    margin-left: -60px; 
+    margin-left: auto; 
+}
+.adduser{
+    margin-right: -5%;
+    margin-bottom: 6%;
+}
+.addusericon{
+    margin-right: 13.8% ;
+    margin-top: -16px;
 }

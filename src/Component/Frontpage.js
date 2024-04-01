@@ -18,7 +18,8 @@ export default class Frontpage extends Component {
     super(props);
     this.state = {
       searchExpand: false,
-      AllEmployeeArray:[]
+      AllEmployeeArray:[],
+      employeeArray:[]
     };
   }
 
@@ -34,7 +35,8 @@ export default class Frontpage extends Component {
     EmployeeService.getAllEmployees()
     .then((response) =>{
       this.setState({
-        AllEmployeeArray: response.data
+        AllEmployeeArray: response.data,
+        employeeArray: response.data
       });
       console.log(response.data);
 
@@ -43,35 +45,18 @@ export default class Frontpage extends Component {
     alert("Somthing went wrong",err);
   });
 };
-
 search = (event) => {
-  let search = event.target.value;
-  
-  this.setState({ employeeArray: this.state.AllEmployeeArray });
-  let empArray = this.state.AllEmployeeArray;
-  if (search.trim().length > 0)
-    empArray = empArray.filter(element =>
-        element.name.toLowerCase().indexOf(search.toLowerCase())>-1
-    );
-  
-  this.setState({ employeeArray: empArray });
+  let searchValue = event.target.value.trim().toLowerCase(); // Trim and convert to lowercase
+
+  let filteredArray = this.state.AllEmployeeArray.filter(employee =>
+    employee.name.toLowerCase().includes(searchValue)
+  );
+
+  this.setState({ employeeArray: filteredArray });
 };
 
-// search = (event) => {
-//   let search = event.target.value.trim().toLowerCase(); // Trim and convert to lowercase
-//   let empArray = this.state.AllEmployeeArray;
 
-//   if (search.length > 0) {
-//     empArray = empArray.filter(element =>
-//       element.name.toLowerCase().includes(search)
-//     );
-//   }
-
-//   this.setState({ employeeArray: empArray });
-// };
-
-
-  render() {
+render() {
     return (
       <div className='container'>
       <header className='header'>
@@ -92,7 +77,9 @@ search = (event) => {
             placeholder="Search"
             />
           </div>
-          
+        
+        </div>  
+        <div className='addusericon'>
           <div>
           <Link to = {"/Employeeform"}>
           <button className='addicon'>
@@ -106,7 +93,7 @@ search = (event) => {
       </div>
       <div class="table-main">
         <Display
-        employeeArray={this.state.AllEmployeeArray}
+        employeeArray={this.state.employeeArray}
         getAllEmployee={this.getAllEmployee}
         />  
       </div>
