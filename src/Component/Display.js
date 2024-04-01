@@ -12,26 +12,23 @@ import { useNavigate } from 'react-router-dom';
 const Display = (props) => {
     const navigate = useNavigate();
 
-    const update = (employeeId) => {
-       
-        navigate(`update/${employeeId}`);
-   
-};
+    const update = (id) => {
+      navigate(`update/${id}`);
+  };
+  
 
-const remove = (employeeId) => {
-    console.log(employeeId);
-    var answer = window.confirm("Data once deleted cannot be restored!! Do you wish to continue ?");
+const remove = (id) => {
+    console.log(id);
+    var answer = window.confirm("Data once deleted cannot be restored");
         if(answer === true){
-            EmployeeService
-                .deleteEmployee(employeeId)
-                    .then((data) => {
+            EmployeeService.deleteEmployee(id).then((data) => {
               alert("Data deleted successfully!!",data);
               window.location.reload();
-              props.getAllEmployees();       
+              props.getallEmployees();       
             })
-      .catch((error) => {
-        alert("Something Went Wrong!",error);
-      });
+      // .catch((error) => {
+      //   // alert("Something Went Wrong, Cant delete Employee Data");
+      // });
     }else{
       alert("Data Not Deleted")
     }
@@ -76,10 +73,10 @@ const remove = (employeeId) => {
                   <td>{employees.startdate}</td>
                   <td>{employees.notes}</td>
                   <td>
-                    <img onClick={() => remove(employees.emp_id)}
+                    <img onClick={() => remove(employees.id)}
                     src={deleteIcon}
                     alt="delete" />
-                  <img onClick={() => update(employees.emp_id)}
+                  <img onClick={() => update(employees.id)}
                     src={editIcon}
                     alt="edit" />
                   </td>

@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-import { IoSearch } from "react-icons/io5";
-// import searchIcon from "../Asserts/search.svg"
-import { IoMdAdd } from "react-icons/io";
-// import searchIcon from "../Asserts/search.svg";
-// import logo from '../Asserts/logo.png';
-// import addImage from '../Asserts/add-24px.svg';
-// import searchIcon from '../Asserts/search-black.svg';
-import './Frontpage.css';
-import { Link } from 'react-router-dom';
-import EmployeeService from '../Service/EmployeeService';
-import Display from './Display';
+// import React, { Component } from 'react'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faUser } from '@fortawesome/free-solid-svg-icons';
+// import { IoSearch } from "react-icons/io5";
+// // import searchIcon from "../Asserts/search.svg"
+// import { IoMdAdd } from "react-icons/io";
+// // import searchIcon from "../Asserts/search.svg";
+// // import logo from '../Asserts/logo.png';
+// // import addImage from '../Asserts/add-24px.svg';
+// // import searchIcon from '../Asserts/search-black.svg';
+// import './Frontpage.css';
+// import { Link } from 'react-router-dom';
+// import EmployeeService from '../Service/EmployeeService';
+// import Display from './Display';
 
 export default class Frontpage extends Component {
   constructor(props){

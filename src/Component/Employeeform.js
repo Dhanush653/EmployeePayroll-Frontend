@@ -32,7 +32,8 @@ export const Employeeform = (props) => {
     if (params.id) {
       getDataById(params.id);
     }
-  }, []);
+}, [params.id]);
+  
 
   const getDataById = (id) => {
     EmployeeService
@@ -43,27 +44,25 @@ export const Employeeform = (props) => {
         setData(obj);
       })
       .catch((err) => {
-        alert("err is ", err);
+        alert("error in getting the id ",err);
       });
   };
-
   const setData = (obj) => {
-    let array = obj.startdate;
-    console.log(array);
-    console.log();
+    let array = obj.startdate.split(" ");
+    let day = array[0].padStart(2, '0'); 
     setForm({
-      ...formValue,
-      ...obj,
-      id: obj.emp_id,
-      name: obj.name,
-      departmentValue: obj.department,
-      isUpdate: true,
-      day: array[0] + array[1],
-      month: array[3] + array[4] + array[5],
-      year: array[7] + array[8] + array[9] + array[10],
-      notes: obj.note,
+        ...formValue,
+        ...obj,
+        id: obj.emp_id,
+        name: obj.name,
+        departmentValue: obj.department,
+        isUpdate: true,
+        day: day,
+        month: array[1],
+        year: array[2],
+        notes: obj.notes,
     });
-  };
+};
 
   const changeValue = (event) => {
     setForm({ ...formValue, [event.target.name]: event.target.value })
@@ -78,9 +77,9 @@ export const Employeeform = (props) => {
     } 
     else{
       checkArray.push(name);
-      setForm({ ...formValue, departmentValue: checkArray });
-    } 
-  };
+    }
+    setForm({ ...formValue, departmentValue: checkArray }); 
+  }
 
   const getChecked = (name) => {
     return formValue.departmentValue && formValue.departmentValue.includes(name);
@@ -101,29 +100,25 @@ export const Employeeform = (props) => {
     };
 
     if (formValue.isUpdate) {
-      var answer =  window.confirm("Data once modified cannot be restored!! Do you wish to continue?");
+      var answer =  window.confirm("Data once modified cannot be restored");
       if(answer === true){
-          EmployeeService
-          .updateEmployee(params.id,object)
-          .then((data) => {
-            alert("Data updated successfully!",data);
+          EmployeeService.updateEmployee(params.id,object).then((data) => {
+            alert("Data updated successfully",data);
           })
           .catch((error) => {
-              alert("WARNING!! Error updating the data!",error);
+              alert("WARNING Error updating the data",error);
           });
           }else{
               window.location.reload();
           }
     } else {
-      EmployeeService
-        .addEmployee(object)
-        .then((response) => {
+      EmployeeService.addEmployee(object).then((response) => {
           console.log(response);
           alert("Data Added successfully!!",response)
         })
         .catch(error => {
           console.log(error);
-          alert("WARNING!! Error while adding the data!");
+          alert("Error while adding the data!");
         });
   }     
 }
@@ -145,7 +140,8 @@ export const Employeeform = (props) => {
         <div className='name'>
         {/* (e) => setForm({ ...formValue, name: e.target.value }) */}
           <label htmlFor="name" className='namelabel'>Name</label>
-          <input type="text" id="name" className='nameinput' name="name" placeholder='Enter Name' value={formValue.name} onChange={(e) => setForm({ ...formValue, name: e.target.value })}/>
+          {/* (e) => setForm({ ...formValue, name: e.target.value }) */}
+          <input type="text" id="name" className='nameinput' name="name" placeholder='Enter Name' value={formValue.name} onChange={changeValue}/>
         </div>
         
         <div className='profile'>
@@ -227,7 +223,7 @@ export const Employeeform = (props) => {
            <div>
              <label htmlFor='notes' className='noteslabel'>Notes</label>
              {/* (e) => setForm({ ...formValue, notes: e.target.value }) */}
-             <textarea id='notes' className='notestextarea' placeholder='Enter notes here' value={formValue.notes} onChange={(e) => setForm({ ...formValue, notes: e.target.value })} name="notes"></textarea>
+             <textarea id='notes' className='notestextarea' placeholder='Enter notes here' value={formValue.notes} onChange={changeValue} name="notes"></textarea>
            </div>
         <div className='buttons'>
           <Link to = {"/"}>
